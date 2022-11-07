@@ -20,8 +20,8 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore ./test-workflows/TestApp
+      run: dotnet restore ../../test-workflows/TestApp
     - name: Build
-      run: dotnet build --no-restore ./test-workflows/TestApp
+      run: dotnet build --no-restore ../../test-workflows/TestApp
     - name: Test
-      run: dotnet test --no-build --verbosity normal ./test-workflows/TestApp
+      run: dotnet test --no-build --verbosity normal ../../test-workflows/TestApp
