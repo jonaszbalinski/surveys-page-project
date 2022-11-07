@@ -1,0 +1,8 @@
+name: Manual CodeQL
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-codeql:
+    uses: ./.github/workflows/codeql.yml
