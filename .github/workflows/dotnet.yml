@@ -18,14 +18,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - bash: echo $(project_path)
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
-    - name: Print path to file
-      bash: |
-        echo $(project_path)
     - name: Restore dependencies
       run: dotnet restore $(project_path)
     - name: Build
