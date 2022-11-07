@@ -20,8 +20,8 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore /home/runner/work/surveys-page-project/surveys-page-project/test-workflows/TestApp/TestApp
+      run: dotnet restore /home/runner/work/surveys-page-project/surveys-page-project/test-workflows/TestApp
     - name: Build
-      run: dotnet build --no-restore /home/runner/work/surveys-page-project/surveys-page-project/test-workflows/TestApp/TestApp
+      run: dotnet build --no-restore /home/runner/work/surveys-page-project/surveys-page-project/test-workflows/TestApp
     - name: Test
-      run: dotnet test --no-build --verbosity normal /home/runner/work/surveys-page-project/surveys-page-project/test-workflows/TestApp/TestApp
+      run: dotnet test --no-build --verbosity normal /home/runner/work/surveys-page-project/surveys-page-project/test-workflows/TestApp
