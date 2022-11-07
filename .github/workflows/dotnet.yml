@@ -16,9 +16,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - bash: echo $(project_path)
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
