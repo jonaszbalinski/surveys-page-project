@@ -1,0 +1,8 @@
+name: Manual .NET
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-dotnet:
+    uses: ./.github/workflows/dotnet.yml
