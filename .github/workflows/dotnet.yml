@@ -3,10 +3,6 @@
 
 name: .NET
 
-variables:
-  - name: project_path
-    value: $GITHUB_ACTION_PATH/../../test-workflows/TestApp
-
 on:
   push:
     branches: [ "main" ]
@@ -23,8 +19,8 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore $(project_path)
+      run: dotnet restore $(GITHUB_ACTION_PATH)/../../test-workflows/TestApp
     - name: Build
-      run: dotnet build --no-restore $(project_path)
+      run: dotnet build --no-restore $(GITHUB_ACTION_PATH)/../../test-workflows/TestApp
     - name: Test
-      run: dotnet test --no-build --verbosity normal $(project_path)
+      run: dotnet test --no-build --verbosity normal $(GITHUB_ACTION_PATH)/../../test-workflows/TestApp
