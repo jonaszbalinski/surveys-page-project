@@ -24,7 +24,8 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Print path to file
-        run: echo $(project_path)
+      bash: |
+        echo $(project_path)
     - name: Restore dependencies
       run: dotnet restore $(project_path)
     - name: Build
