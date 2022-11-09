@@ -1,0 +1,235 @@
+:root
+{
+    background: linear-gradient(90deg, #240a35, #120a35, #220a35, #240a35, #120a35, #250a3b, #010a35);
+}
+
+
+#main_bar
+{
+    padding: 30px;
+    background: linear-gradient(30deg, #002bff, #7a00ff, #7700ff, #cc00ff);
+    background-size: 400%;
+    animation: main_bar_animation 5s linear infinite;
+    text-align: center;
+    border: 2px solid rgba(173, 183, 230, 0.2);
+    color: aliceblue;
+}
+
+#title_text
+{
+    font-size: 60px;
+    font-weight: 600;
+    background-image: linear-gradient(to left, #040407, #30005f,  #050538, #1a0330, #042c47, #000000);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.functional_button
+{
+    padding: 20px;
+    background-color: blue;
+    position: absolute;
+    top: 20px;
+    border: 2px solid black;
+    border-radius: 50%;
+    text-align: center;
+    color: aliceblue;
+    font-size: medium;
+    
+}
+
+.functional_button:hover
+{
+    background-color:cornflowerblue;
+    cursor: pointer;
+}
+
+#user_button
+{
+    right: 20px;
+}
+
+#menu_button
+{
+    left: 20px;
+}
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+@keyframes main_bar_animation {
+    0%{background-position:0% 0%}
+    50%{background-position:100% 0%}
+    100%{background-position:0% 0%}
+}
+
+#menu_box
+{
+    visibility: hidden;
+    height: 80%;
+    width: 10%;
+    background-color: darkblue;
+    position: absolute;
+    border: 5px solid lightblue;
+    color: aliceblue;
+    
+}
+
+#menu_links a
+{
+    margin-top: 20px;
+    margin-left: 20px;
+    display: block;
+}
+
+#menu_links a:hover
+{
+    color: cornflowerblue;
+    cursor: pointer;
+}
+
+#user_box
+{
+    visibility: hidden;
+    right: 0%;
+    height: 20%;
+    width: 25%;
+    background-color: darkblue;
+    position: absolute;
+    border: 5px solid lightblue;
+    color: aliceblue;
+    text-align: right;
+    
+}
+
+#user_box a
+{
+    margin-top: 20px;
+    margin-right: 20px;
+    display: block;
+}
+
+#user_box a:hover
+{
+    color: cornflowerblue;
+    cursor: pointer;
+}
+
+
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+    width: 100%;
+    background: transparent;
+    background-size: cover;
+}
+.form_class {
+    width: 500px;
+    padding: 40px;
+    border-radius: 8px;
+    background-color: white;
+    font-family: 'system-ui';
+    box-shadow: 5px 5px 10px rgb(0,0,0,0.3);
+}
+.form_div {
+    text-transform: uppercase;
+}
+.form_div > label {
+    letter-spacing: 3px;
+    font-size: 1rem;
+}
+.info_div {
+    text-align: center;
+    margin-top: 20px;
+}
+.info_div {
+    letter-spacing: 1px;
+}
+.field_class {
+    width: 100%;
+    border-radius: 6px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 5px 0px;
+    text-indent: 6px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: 'system-ui';
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+.submit_class {
+    border-style: none;
+    border-radius: 5px;
+    background-color: #FFE6D4;
+    padding: 8px 20px;
+    font-family: 'system-ui';
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    box-shadow: 2px 2px 5px rgb(0,0,0,0.2);
+    cursor: pointer;
+}
