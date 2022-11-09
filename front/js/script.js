@@ -21,7 +21,7 @@ function animateText()
 			textIterator++;
 			mainText.innerText = textToDisplay.substring(0, textIterator);
 			mainText.style.color = '#' + Math.floor(Math.random() * 16777215).toString(16);
-			mainText.style.fontSize = (Math.floor(Math.random() * 2) + 52) + "px";
+			mainText.style.fontSize = (Math.floor(Math.random() * 5) + 98) + "px";
 
 		}
 		else textIterator = 0;
@@ -65,3 +65,7 @@ function userHide()
 			
 		}
 }
+
+const validateLogin = () => {
+	alert('!');
+  }
