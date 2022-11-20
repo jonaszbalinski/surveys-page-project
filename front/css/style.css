@@ -1,58 +1,65 @@
-:root
-{
+:root {
     background: linear-gradient(90deg, #240a35, #120a35, #220a35, #240a35, #120a35, #250a3b, #010a35);
+    background-size: 400%;
+    animation: main_bar_animation 25s linear infinite;
 }
 
+a {
+    text-decoration: none;
+}
 
-#main_bar
-{
+.main_bar {
     padding: 30px;
     background: linear-gradient(30deg, #002bff, #7a00ff, #7700ff, #cc00ff);
     background-size: 400%;
     animation: main_bar_animation 5s linear infinite;
     text-align: center;
-    border: 2px solid rgba(173, 183, 230, 0.2);
     color: aliceblue;
 }
 
-#title_text
-{
+#main_page_bar {
+    padding: 5px;
+}
+
+.title_text {
     font-size: 60px;
     font-weight: 600;
-    background-image: linear-gradient(to left, #040407, #30005f,  #050538, #1a0330, #042c47, #000000);
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    color: #000;
 }
 
-.functional_button
-{
-    padding: 20px;
-    background-color: blue;
+#welcome_text{
+margin-bottom: 15px;
+}
+
+@keyframes glowing {
+    0% {background-position: 0 0; }
+    50% {background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+@keyframes main_bar_animation {
+    0% { background-position: 0% 0% }
+    50% { background-position: 100% 0% }
+    100% { background-position: 0% 0% }
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
     position: absolute;
-    top: 20px;
-    border: 2px solid black;
-    border-radius: 50%;
-    text-align: center;
-    color: aliceblue;
-    font-size: medium;
-    
-}
-
-.functional_button:hover
-{
-    background-color:cornflowerblue;
-    cursor: pointer;
-}
-
-#user_button
-{
-    right: 20px;
-}
-
-#menu_button
-{
-    left: 20px;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
 }
 
 .glow-on-hover {
@@ -65,23 +72,6 @@
     cursor: pointer;
     position: relative;
     z-index: 0;
-    border-radius: 10px;
-}
-
-.glow-on-hover:before {
-    content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    top: -2px;
-    left:-2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
     border-radius: 10px;
 }
 
@@ -109,71 +99,71 @@
     border-radius: 10px;
 }
 
-@keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
+#user_button {
+    top: 30px;
+    right: 20px;
+    position: absolute;
 }
 
-@keyframes main_bar_animation {
-    0%{background-position:0% 0%}
-    50%{background-position:100% 0%}
-    100%{background-position:0% 0%}
+#menu_button {
+    top: 30px;
+    left: 20px;
+    position: absolute;
 }
 
-#menu_box
-{
+#no_log_button {
+    width: 1000px;
+    height: 250px;
+    font-size: 60px;
+}
+
+#menu_box {
     visibility: hidden;
     height: 80%;
-    width: 10%;
-    background-color: darkblue;
+    width: 15%;
+    background: linear-gradient(30deg, #002bff, #7a00ff, #7700ff, #cc00ff);
+    background-size: 400%;
+    animation: main_bar_animation 5s linear infinite;
     position: absolute;
-    border: 5px solid lightblue;
+    border: 2px solid darkblue;
     color: aliceblue;
-    
 }
 
-#menu_links a
-{
+#menu_links a {
     margin-top: 20px;
     margin-left: 20px;
     display: block;
 }
 
-#menu_links a:hover
-{
+#menu_links a:hover {
     color: cornflowerblue;
     cursor: pointer;
 }
 
-#user_box
-{
+#user_box {
     visibility: hidden;
-    right: 0%;
+    right: 5px;
     height: 20%;
     width: 25%;
-    background-color: darkblue;
+    background: linear-gradient(30deg, #002bff, #7a00ff, #7700ff, #cc00ff);
+    background-size: 400%;
+    animation: main_bar_animation 5s linear infinite;
     position: absolute;
-    border: 5px solid lightblue;
+    border: 2px solid darkblue;
     color: aliceblue;
     text-align: right;
-    
 }
 
-#user_box a
-{
+#user_box a {
     margin-top: 20px;
     margin-right: 20px;
     display: block;
 }
 
-#user_box a:hover
-{
+#user_box a:hover {
     color: cornflowerblue;
     cursor: pointer;
 }
-
-
 
 main {
     display: flex;
@@ -183,30 +173,47 @@ main {
     width: 100%;
     background: transparent;
     background-size: cover;
+    color: aliceblue;
 }
+
 .form_class {
     width: 500px;
     padding: 40px;
     border-radius: 8px;
-    background-color: white;
+    background: linear-gradient(30deg, #002bff, #7a00ff, #7700ff, #cc00ff);
+    background-size: 400%;
+    animation: main_bar_animation 5s linear infinite;
     font-family: 'system-ui';
-    box-shadow: 5px 5px 10px rgb(0,0,0,0.3);
+    box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.3);
+    color: aliceblue;
 }
+
 .form_div {
     text-transform: uppercase;
 }
-.form_div > label {
+
+.form_div>label {
     letter-spacing: 3px;
     font-size: 1rem;
 }
+
 .info_div {
     text-align: center;
     margin-top: 20px;
-}
-.info_div {
     letter-spacing: 1px;
 }
+
+.info_div a {
+    text-decoration: none;
+    color: #00ffd5;
+}
+
+.info_div a:hover {
+    color: aliceblue;
+}
+
 .field_class {
+    background: linear-gradient(90deg, #240a35, #120a35, #220a35, #240a35, #120a35, #250a3b, #010a35);
     width: 100%;
     border-radius: 6px;
     border-style: solid;
@@ -218,7 +225,9 @@ main {
     font-family: 'system-ui';
     font-size: 0.9rem;
     letter-spacing: 2px;
+    color: aliceblue;
 }
+
 .submit_class {
     border-style: none;
     border-radius: 5px;
@@ -230,6 +239,34 @@ main {
     display: block;
     margin: auto;
     margin-top: 10px;
-    box-shadow: 2px 2px 5px rgb(0,0,0,0.2);
+    box-shadow: 2px 2px 5px rgb(0, 0, 0, 0.2);
     cursor: pointer;
+}
+
+#login_button2 {
+    display: block;
+    margin: auto;
+}
+
+#register_button2 {
+    display: block;
+    margin: auto;
+}
+
+#members_table {
+    width: 70%;
+    table-layout: auto;
+    text-align: center;
+    color: aliceblue;
+    font-size: 25px;
+}
+
+#github_picture {
+    width: 40%;
+    margin-top: 3%;
+}
+
+.member_picture {
+    width: 60%;
+    border-radius: 5%;
 }

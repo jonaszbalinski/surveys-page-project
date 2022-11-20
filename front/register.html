@@ -1,64 +1,44 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>Survey page</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <meta name="description" content="A simple survey page app.">
 </head>
 
 <body>
-    <div id="main_bar">
-    
-      <a href="../index.html"> <h1 id="title_text">Register</h1> </a>
-         
-      </div>
-      <dif id="menu_box">
-        
-        <dif id="menu_links">
-          <a>Something</a>
-          <a>Something</a>
-          <a>Something</a>
-          <a>Something</a>
-          <a>Something</a>
-          <a>Something</a>
-          <a>Something</a>
-          <a>Something</a>
-        </dif>
-      </dif>
-    
-      <dif id="user_box">
-        
-          <a>Something</a>
-          <a>Something</a>
-          <a>Something</a>
-          
-        </dif>
-      </dif>
-      
-      <div id="main_text"></div>
+  <div class="main_bar">
+    <a href="../index.html">
+      <h1 class="title_text">Register</h1>
+    </a>
+  </div>
 
-      <main>
-        <form id="login_form" class="form_class" action="aboutus.html" method="post">
-            <div class="form_div">
-                <label>E-mail:</label>
-                <input class="field_class" name="login_txt" type="text" placeholder="enter e-mail" autofocus>
-                <label>Your login:</label>
-                <input class="field_class" name="login_txt" type="text" placeholder="enter your login" autofocus>
-                <label>Password:</label>
-                <input id="pass" class="field_class" name="password_txt" type="password" placeholder="enter password">
-                <label>Confirm password:</label>
-                <input id="pass2" class="field_class" name="password_txt" type="password" placeholder="enter password again">
-                <button class="submit_class" type="submit" form="login_form" onclick="return validateLogin()">Register</button>
-            </div>
-            <div class="info_div">
-                <p>Already have account? <a href="login.html">Log in!</a></p>
-            </div>
-        </form>
-    </main>
-  
+  <div id="main_text"></div>
+
+  <main>
+    <form id="register_form" class="form_class" action="main_page.html" method="post">
+      <div class="form_div">
+        <label>E-mail:</label>
+        <input class="field_class" name="login_txt" type="text" placeholder="enter e-mail" autofocus>
+        <label>Your login:</label>
+        <input class="field_class" name="login_txt" type="text" placeholder="enter your login" autofocus>
+        <label>Password:</label>
+        <input id="pass" class="field_class" name="password_txt" type="password" placeholder="enter password">
+        <label>Confirm password:</label>
+        <input id="pass2" class="field_class" name="password_txt" type="password" placeholder="enter password again">
+        <button id="register_button2" class="glow-on-hover" type="submit" form="register_form"
+          onclick="return validateLogin()">Register</button>
+      </div>
+      <div class="info_div">
+        <p>Already have account? <a href="login.html">Log in!</a></p>
+      </div>
+    </form>
+  </main>
+
   <script src="js/script.js"></script>
 </body>
+
 </html>

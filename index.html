@@ -1,24 +1,25 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Survey page</title>
+    <link rel="stylesheet" type="text/css" href="front/css/style.css">
+    <meta name="description" content="A simple survey page app.">
+  </head>
 
-  <title>Survey page</title>
-  <link rel="stylesheet" type="text/css" href="front/css/style.css">
-  <meta name="description" content="A simple survey page app.">
-</head>
-
-<body>
-  <div id="main_bar">
+  <body>
+    <div class="main_bar">
+      <h1 id="welcome_text"class="title_text">Surveys page prototype</h1>
+      <a href="front/aboutus.html"> <button id="about_us_button" class="glow-on-hover" type="button">About us</button> </a>
+      <a href="front/login.html"> <button id="login_button" class="glow-on-hover" type="button">Log in</button> </a>
+      <a href="front/register.html"> <button id="register_button" class="glow-on-hover" type="button">Register</button> </a>
+    </div>
     
-    <h1 id="title_text">Surveys page prototype</h1>
-    <a href="front/aboutus.html"> <button id="about_us_button" class="glow-on-hover" type="button">About us</button> </a>
-    <a href="front/login.html"> <button id="login_button" class="glow-on-hover" type="button">Log in</button> </a>
-    <a href="front/register.html"> <button id="register_button" class="glow-on-hover" type="button">Register</button> </a>
- 
-  </div>
-  
-  <script src="front/js/script.js"></script>
-</body>
+    <main>
+      <a href="front/main_page.html"> <button id="no_log_button" class="glow-on-hover" type="button">Continue without login</button> </a>
+    </main>
+
+    <script src="front/js/script.js"></script>
+  </body>
 </html>
