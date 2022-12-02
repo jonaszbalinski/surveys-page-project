@@ -32,6 +32,14 @@ function validatePassword(password) {
     return false;
 }
 
+function loginDataIsValid() {
+    return true;
+}
+
+function createAccountDataIsValid() {
+    return true;
+}
+
 document.addEventListener("DOMContentLoaded", () =>{
     const loginForm = document.querySelector("#login");
     const createAccountForm = document.querySelector("#createAccount");
@@ -40,12 +48,18 @@ document.addEventListener("DOMContentLoaded", () =>{
         e.preventDefault();
         loginForm.classList.remove("form--hidden");
         createAccountForm.classList.add("form--hidden");
+        document.querySelectorAll(".form__input").forEach(inputElement => {
+            clearInputError(inputElement);
+        });
     });
 
     document.querySelector("#linkCreateAccount").addEventListener("click", e => {
         e.preventDefault();
         loginForm.classList.add("form--hidden");
         createAccountForm.classList.remove("form--hidden");
+        document.querySelectorAll(".form__input").forEach(inputElement => {
+            clearInputError(inputElement);
+        });
     });
 
     loginForm.addEventListener("submit", e => {
@@ -88,10 +102,24 @@ document.addEventListener("DOMContentLoaded", () =>{
                     setInputError(inputElement, "Passwords does not match")
                 }
             }
-        })
+        });
 
         inputElement.addEventListener("input", e => {
             clearInputError(inputElement);
-        })
-    })
+        });
+    });
+
+    document.querySelector("#loginContinue").addEventListener("click", e => {
+        e.preventDefault();
+        if (loginDataIsValid()) {
+            // ...
+        }
+    });
+
+    document.querySelector("#createAccountContinue").addEventListener("click", e => {
+        e.preventDefault();
+        if (createAccountDataIsValid()) {
+            // ...
+        }
+    });
 });
