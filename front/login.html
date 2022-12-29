@@ -12,6 +12,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
   <div class="container">
     <form class="form" id="login">
       <a href="../index.html" class="form__link" id="s">Back</a>
@@ -61,6 +62,39 @@
     </form>
   </div>
 
+=======
+  <div class="main_bar">
+
+    <a href="../index.html">
+      <h1 class="title_text">Log in</h1>
+    </a>
+
+  </div>
+
+
+  <main>
+    <form id="login_form" class="form_class" action="main_page.html" method="post">
+
+      <div class="form_div">
+        <label>Login:</label>
+        <input class="field_class" name="login_txt" type="text" placeholder="enter login" autofocus>
+        <label>Password:</label>
+        <input id="pass" class="field_class" name="password_txt" type="password" placeholder="enter password">
+        <button id="login_button2" class="glow-on-hover" type="submit" form="login_form"
+          onclick="return validateLogin()">Log in</button>
+      </div>
+      <div class="info_div">
+        <p>Don't have account yet? <a href="register.html">Register!</a></p>
+      </div>
+    </form>
+
+  </main>
+
+  <div id="main_text"></div>
+
+  <script src="js/script.js"></script>
+
+>>>>>>> 021bb2a457737669bbcb213657b7251d9499456d
 </body>
 
 </html>
