@@ -76,8 +76,6 @@ async function addAccountToDatabase(username, email, password) {
     };
 
     data[String(nextID)] = newUser;
-
-    JSON.stringify(data)
 }
 
 document.addEventListener("DOMContentLoaded", () =>{
@@ -187,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () =>{
         e.preventDefault();
         if (validEmail != '' && validPassword != '' && validPassword2 != '' && validUser != '') {
             addAccountToDatabase(validEmail, validPassword).then(value => {
-                //location.href = "main_page.html";
+                location.href = "main_page.html";
             });
         }
     });
