@@ -2,6 +2,16 @@ let validEmail = false;
 let validPassword = false;
 let validPassword2 = false;
 let validUser = false;
+
+
+const databasePath = './db/db.json';
+
+async function getDatabase() {
+    let db = await fetch(databasePath);
+    let data = await db.json();
+    return data;
+  }
+
 function setFormMessage(formElement, type, message) {
     const messageElement = formElement.querySelector(".form__message");
 
@@ -31,19 +41,41 @@ function validateEmail(email) {
 function validatePassword(password) {
     var validRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$/;
   
-    //if (password.match(validRegex))
-        //return true;
-    //return false;
+    if (password.match(validRegex))
+        return true;
+    return false;
+}
+
+async function isLoginDataValid(email, password) {
+    const data = await getDatabase();
+
+    for (var account in data["accounts"]) {
+        if (String(data["accounts"][account]["email"]) === String(email) && String(data["accounts"][account]["password"]) === String(password)) {
+            return true
+        }
+    }
+
+    return false;
+}
+
+async function addAccountToDatabase(username, email, password) { 
+    var data = await getDatabase();
+    var nextID = -1
+
+    for (var account in data["accounts"]) {
+        if (parseInt(account) >= nextID) {
+            nextID = parseInt(account) + 1
+            console.log(nextID)
+        }
+    }
     
-    return true;
-}
+    const newUser = {
+        "username": username,
+        "email": email,
+        "password": password
+    };
 
-function loginDataIsValid() {
-    return true;
-}
-
-function createAccountDataIsValid() {
-    return true;
+    data[String(nextID)] = newUser;
 }
 
 document.addEventListener("DOMContentLoaded", () =>{
@@ -79,55 +111,55 @@ document.addEventListener("DOMContentLoaded", () =>{
         inputElement.addEventListener("blur", e => {
             if (e.target.id === "loginEmail") {
                 if (e.target.value.length < 5 || !validateEmail(e.target.value)) {
-                    validEmail = false;
+                    validEmail = '';
                     setInputError(inputElement, "Please enter vaild email");
                 }
-                else{
-                    validEmail = true;
+                else {
+                    validEmail = e.target.value;
                 }
             }
             else if (e.target.id === "loginPassword") {
-                validPassword = true;
+                validPassword = e.target.value;
             }
             else if (e.target.id === "createAccountUsername") {
                 if (e.target.value.length < 4 || e.target.value.length > 20) {
-                    validUser = false;
+                    validUser = '';
                     setInputError(inputElement, "Username must contain between 4 and 20 characters");
                 }
-                else{
-                    validUser = true;
+                else {
+                    validUser = e.target.value;
                 }
             }
             else if (e.target.id === "createAccountEmail") {
                 if (e.target.value.length < 5 || !validateEmail(e.target.value)) {
-                    validEmail = false;
+                    validEmail = '';
                     setInputError(inputElement, "Please enter vaild email");
                 }
-                else{
-                    validEmail = true;
+                else {
+                    validEmail = e.target.value;
                 }
             }
             else if (e.target.id === "createAccountPassword") {
                 if (e.target.value.length < 6 || e.target.value.length > 20) {
-                    validPassword = false;
+                    validPassword = '';
                     setInputError(inputElement, "Password must contain between 6 and 20 characters" );
                 }
                 
                 else if (!validatePassword(e.target.value)) {
-                    validPassword = false;
+                    validPassword = '';
                     setInputError(inputElement, "Password must contain at least one numeric digit, one uppercase and one lowercase letter");
                 }
-                else{
-                    validPassword = true;
+                else {
+                    validPassword = e.target.value;
                 }
             }
             else if (e.target.id === "createAccountConfirmPassword") {
                 if (!(e.target.value === document.querySelector("#createAccountPassword").value)) {
-                    validPassword2 = false;
+                    validPassword2 = '';
                     setInputError(inputElement, "Passwords does not match")
                 }
-                else{
-                    validPassword2 = true;
+                else {
+                    validPassword2 = e.target.value;
                 }
             }
             
@@ -140,21 +172,21 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     document.querySelector("#loginContinue").addEventListener("click", e => {
         e.preventDefault();
-        if (validEmail  && validPassword) {
-        //if (loginDataIsValid()) {
-            // ...
-            
-            location.href="main_page.html";
+        if (validEmail != '' && validPassword != '') {
+            isLoginDataValid(validEmail, validPassword).then(value => {
+                if (value == true) {
+                    location.href = "main_page.html";
+                }
+            });
         }
     });
 
     document.querySelector("#createAccountContinue").addEventListener("click", e => {
         e.preventDefault();
-        if (validEmail && validPassword && validPassword2 && validUser) {
-        //if (createAccountDataIsValid()) {
-            // ...
-            
-            location.href="main_page.html";
+        if (validEmail != '' && validPassword != '' && validPassword2 != '' && validUser != '') {
+            addAccountToDatabase(validEmail, validPassword).then(value => {
+                location.href = "main_page.html";
+            });
         }
     });
 });

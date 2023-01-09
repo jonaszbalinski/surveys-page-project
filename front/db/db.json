@@ -1,0 +1,14 @@
+{
+    "accounts": {
+        "1": {
+            "username": "Johny",
+            "email": "abc@abc.abc",
+            "password": "123"
+        },
+        "2": {
+            "username": "Ticobot",
+            "email": "tico@bot.abc",
+            "password": "123"
+        }
+    }
+}
