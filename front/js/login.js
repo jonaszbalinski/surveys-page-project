@@ -29,11 +29,13 @@ function validateEmail(email) {
 }
 
 function validatePassword(password) {
-    var validRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/;
+    var validRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,8}$/;
   
-    if (password.match(validRegex) && password.match(""))
-        return true;
-    return false;
+    //if (password.match(validRegex))
+        //return true;
+    //return false;
+    
+    return true;
 }
 
 function loginDataIsValid() {
