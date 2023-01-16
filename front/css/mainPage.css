@@ -210,21 +210,23 @@
         #user_box {
             visibility: hidden;
             right: 5px;
-            height: 25%;
-            width: 25%;
-            background: linear-gradient(30deg, #002bff, #7a00ff, #7700ff, #cc00ff);
+            height: 8%;
+            width: 17%;
+            /*background: linear-gradient(30deg, #002bff, #7a00ff, #7700ff, #cc00ff);*/
+            background: #2596be;            ;
             background-size: 400%;
             animation: main_bar_animation 5s linear infinite;
             position: absolute;
             border: 2px solid darkblue;
             color: aliceblue;
-            text-align: right;
+            text-align: center;
         }
         
         #user_box a {
-            margin-top: 20px;
-            margin-right: 20px;
+        
+            margin-top: 0px;
             display: block;
+            border: 2px solid #000;
         }
         
         #user_box a:hover {
@@ -250,5 +252,9 @@
 
         .optionc{
             color:black;
+        }
+
+        .dupxko{
+            background-color: 1px #000 ;
         }
         
