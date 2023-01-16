@@ -55,6 +55,7 @@ async function isLoginDataValid(email, password) {
         }
     }
 
+
     return false;
 }
 
@@ -103,7 +104,6 @@ document.addEventListener("DOMContentLoaded", () =>{
     loginForm.addEventListener("submit", e => {
         e.preventDefault();
 
-        // magic
         setFormMessage(loginForm, "error", "Invalid password");
     })
 
@@ -176,6 +176,9 @@ document.addEventListener("DOMContentLoaded", () =>{
             isLoginDataValid(validEmail, validPassword).then(value => {
                 if (value == true) {
                     location.href = "main_page.html";
+                }
+                else {
+                    setFormMessage(loginForm, "error", "Invalid email/password!");
                 }
             });
         }
