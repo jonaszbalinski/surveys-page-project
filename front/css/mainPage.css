@@ -3,16 +3,20 @@
 		/* Styling the Body element i.e. Color,
 		Font, Alignment */
 		body {
-			background: linear-gradient(90deg, #240a35, #120a35, #220a35, #240a35, #120a35, #250a3b, #010a35);
-    background-size: 400%;
-    animation: main_bar_animation 25s linear infinite;
+			/*background: linear-gradient(90deg, #240a35, #120a35, #220a35, #240a35, #120a35, #250a3b, #010a35);*/
+            background: url(../img/tlo.png);
+            background-size: 200%;
+            /*animation: main_bar_animation 25s linear infinite;*/
 			text-align: center;
             color: white;
 		}
 
 		/* Styling the Form (Color, Padding, Shadow) */
 		form {
-			background: linear-gradient(30deg, #002bff, #7a00ff, #7700ff, #cc00ff);
+			/*background: linear-gradient(30deg, #002bff, #7a00ff, #7700ff, #cc00ff);*/
+            background: transparent;
+            background-color: rgba(78, 92, 130, 0.5);
+            border-color: black;
             background-size: 400%;
             animation: main_bar_animation 5s linear infinite;
 			max-width: 500px;
@@ -82,11 +86,13 @@
         
         .main_bar {
             padding: 60px;
-            background: linear-gradient(30deg, #002bff, #7a00ff, #7700ff, #cc00ff);
+            background: transparent;
+            background-color: rgba(78, 92, 130, 0.5);
             background-size: 400%;
             animation: main_bar_animation 5s linear infinite;
             text-align: center;
             color: aliceblue;
+            border-radius: 35px;
         }
         
         #main_page_bar {
@@ -210,21 +216,23 @@
         #user_box {
             visibility: hidden;
             right: 5px;
-            height: 25%;
-            width: 25%;
-            background: linear-gradient(30deg, #002bff, #7a00ff, #7700ff, #cc00ff);
+            height: 8%;
+            width: 17%;
+            /*background: linear-gradient(30deg, #002bff, #7a00ff, #7700ff, #cc00ff);*/
+            background: #2596be;            ;
             background-size: 400%;
             animation: main_bar_animation 5s linear infinite;
             position: absolute;
             border: 2px solid darkblue;
             color: aliceblue;
-            text-align: right;
+            text-align: center;
         }
         
         #user_box a {
-            margin-top: 20px;
-            margin-right: 20px;
+        
+            margin-top: 0px;
             display: block;
+            border: 2px solid #000;
         }
         
         #user_box a:hover {
@@ -250,5 +258,9 @@
 
         .optionc{
             color:black;
+        }
+
+        .dupxko{
+            background-color: 1px #000 ;
         }
         
