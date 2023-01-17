@@ -55,7 +55,6 @@ async function isLoginDataValid(email, password) {
         }
     }
 
-
     return false;
 }
 
